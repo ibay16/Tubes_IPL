@@ -45,7 +45,7 @@
 
     /* Card Styling */
     .card-img-top-custom {
-      height: 200px;
+      height: 50%;
       /* Tinggi tetap untuk gambar card */
       object-fit: cover;
     }
@@ -89,7 +89,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active c_itm">
-          <img src="..." class="d-block w-100 c_img" alt="Nail Art Treatment" />
+          <img src="/Tubes_IPL/public/img/carousel1.jpeg" class="d-block w-100 c_img" alt="Nail Art Treatment" />
           <div class="carousel-caption d-block">
             <h1 class="display-4 fw-bold mb-3">Tampil Memukau dengan Nail Art Terbaru</h1>
             <p class="lead d-none d-sm-block">Ragam desain kuku yang cantik dan elegan, dikerjakan oleh profesional.</p>
@@ -98,19 +98,19 @@
         </div>
 
         <div class="carousel-item c_itm">
-          <img src="..." class="d-block w-100 c_img" alt="Spa and Massage" />
+          <img src="/Tubes_IPL/public/img/carousel2.jpeg" class="d-block w-100 c_img" alt="Spa and Massage" />
           <div class="carousel-caption d-block">
-            <h1 class="display-4 fw-bold mb-3">Relaksasi Maksimal dengan Perawatan Spa</h1>
-            <p class="lead d-none d-sm-block">Manjakan diri Anda dengan sesi pijat terbaik kami untuk mengembalikan energi.</p>
+            <h1 class="display-4 fw-bold mb-3">Percantik Matamu dengan Eyelash Terbaik</h1>
+            <p class="lead d-none d-sm-block">Sentuhan lembut untuk tampilan natural setiap hari.</p>
             <a href="#" class="btn btn-warning btn-lg mt-3 shadow-lg text-dark">Pesan Sekarang</a>
           </div>
         </div>
 
         <div class="carousel-item c_itm">
-          <img src="..." class="d-block w-100 c_img" alt="Simple Nail Art Design" />
+          <img src="/Tubes_IPL/public/img/carousel3.jpeg" class="d-block w-100 c_img" alt="Classic Nail Design" />
           <div class="carousel-caption d-block">
-            <h1 class="display-4 fw-bold mb-3">Kecantikan Abadi dengan Klasik Polos</h1>
-            <p class="lead d-none d-sm-block">Desain minimalis yang tetap menonjolkan keindahan alami kuku Anda.</p>
+            <h1 class="display-4 fw-bold mb-3">Nail Art Stylish, Percaya Diri Meningkat</h1>
+            <p class="lead d-none d-sm-block">Desain trendi dengan hasil maksimal.</p>
             <a href="#" class="btn btn-outline-light btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
           </div>
         </div>
@@ -135,10 +135,10 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="eyelash-dummy.jpg" class="card-img-top card-img-top-custom" alt="Eyelash Extension" />
+          <img src="../../public/img/card1.jpeg" class="card-img-top card-img-top-custom" alt="Eyelash Extension" />
           <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-primary">Eyelash Extension</h5>
-            <p class="card-text text-muted">Bulu mata lentik alami tanpa repot setiap hari. Tahan lama dan nyaman.</p>
+            <h5 class="card-title fw-bold text-primary">Classic Eyelash Extension</h5>
+            <p class="card-text text-muted">Bulu mata lentik alami untuk tampilan natural sehari-hari.</p>
             <a href="#" class="btn btn-outline-primary mt-2">Book Treatments</a>
           </div>
         </div>
@@ -146,10 +146,10 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="nail-art-dummy.jpg" class="card-img-top card-img-top-custom" alt="Premium Nail Art" />
+          <img src="../../public/img/card2.jpeg" class="card-img-top card-img-top-custom" alt="Premium Nail Art" />
           <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-success">Premium Nail Art</h5>
-            <p class="card-text text-muted">Desain kuku custom mewah dengan bahan berkualitas tinggi dan detail halus.</p>
+            <h5 class="card-title fw-bold text-success">Natural Eyelash Extension</h5>
+            <p class="card-text text-muted">Memberi efek rapi dan ringan dengan hasil yang terlihat natural.</p>
             <a href="#" class="btn btn-outline-success mt-2">Book Treatments</a>
           </div>
         </div>
@@ -157,10 +157,10 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="pedicure-dummy.jpg" class="card-img-top card-img-top-custom" alt="Spa Manicure" />
+          <img src="../../public/img/card3.jpeg" class="card-img-top card-img-top-custom" alt="Spa Manicure" />
           <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-danger">Spa Manicure & Pedicure</h5>
-            <p class="card-text text-muted">Perawatan lengkap tangan dan kaki, membersihkan dan melembapkan kulit.</p>
+            <h5 class="card-title fw-bold text-danger">Volume Eyelash Extension</h5>
+            <p class="card-text text-muted">Bulu mata lebih tebal dan dramatis tanpa terasa berat.</p>
             <a href="#" class="btn btn-outline-danger mt-2">Book Treatments</a>
           </div>
         </div>
@@ -170,10 +170,10 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mt-4">
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="lash-lift-dummy.jpg" class="card-img-top card-img-top-custom" alt="Lash Lift" />
+          <img src="../../public/img/card4.jpeg" class="card-img-top card-img-top-custom" alt="Lash Lift" />
           <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-info">Lash Lift & Tint</h5>
-            <p class="card-text text-muted">Meningkatkan volume bulu mata alami Anda tanpa ekstensi. Hasil instan!</p>
+            <h5 class="card-title fw-bold text-info">Natural Nail Art</h5>
+            <p class="card-text text-muted">Desain kuku simpel dengan warna lembut dan elegan.</p>
             <a href="#" class="btn btn-outline-info mt-2">Book Treatments</a>
           </div>
         </div>
@@ -181,10 +181,10 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="keratin-dummy.jpg" class="card-img-top card-img-top-custom" alt="Keratin Treatment" />
+          <img src="../../public/img/card5.jpeg" class="card-img-top card-img-top-custom" alt="Keratin Treatment" />
           <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-secondary">Hair Keratin Treatment</h5>
-            <p class="card-text text-muted">Rambut lebih lurus, berkilau, dan mudah diatur dengan perawatan keratin.</p>
+            <h5 class="card-title fw-bold text-secondary">Elegant Nail Art</h5>
+            <p class="card-text text-muted">Kombinasi warna dan detail halus untuk tampilan kuku mewah.</p>
             <a href="#" class="btn btn-outline-secondary mt-2">Book Treatments</a>
           </div>
         </div>
@@ -192,10 +192,10 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="body-massage-dummy.jpg" class="card-img-top card-img-top-custom" alt="Body Massage" />
+          <img src="../../public/img/card6.jpeg" class="card-img-top card-img-top-custom" alt="Body Massage" />
           <div class="card-body text-center">
-            <h5 class="card-title fw-bold text-warning">Full Body Massage</h5>
-            <p class="card-text text-muted">Terapi pijat untuk meredakan stres, pegal, dan meningkatkan sirkulasi darah.</p>
+            <h5 class="card-title fw-bold text-warning">Floral Nail Art</h5>
+            <p class="card-text text-muted">Hiasan kuku bermotif bunga yang cantik dan feminin.</p>
             <a href="#" class="btn btn-outline-warning mt-2">Book Treatments</a>
           </div>
         </div>
