@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <title>Zara Eyelash - Beauty & Treatment</title>
+  <style>
+    /* Style untuk Carousel Item */
+    .c_itm {
+      height: 600px;
+      position: relative;
+      /* Penting untuk overlay */
+    }
+
+    /* Style untuk Gambar di Carousel */
+    .c_img {
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+      /* Meredupkan gambar sedikit */
+    }
+
+    /* Overlay untuk teks agar lebih terbaca */
+    .c_itm::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      /* Overlay gelap */
+      z-index: 1;
+    }
+
+    /* Memastikan caption di atas overlay */
+    .carousel-caption {
+      z-index: 2;
+      padding-bottom: 5rem;
+      /* Menurunkan caption sedikit */
+    }
+
+    /* Card Styling */
+    .card-img-top-custom {
+      height: 200px;
+      /* Tinggi tetap untuk gambar card */
+      object-fit: cover;
+    }
+
+    /* Footer Spacing */
+    .footer-section {
+      padding: 3rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="#"><i class="bi bi-star-fill text-warning me-2"></i> Zara Eyelash</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-primary fw-bold" aria-current="page" href="#"><i class="bi bi-calendar-check me-1"></i> Go Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-person-fill-lock me-1"></i> Admin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- carousel -->
+  <div class="container-fluid p-0">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active c_itm">
+          <img src="..." class="d-block w-100 c_img" alt="Nail Art Treatment" />
+          <div class="carousel-caption d-block">
+            <h1 class="display-4 fw-bold mb-3">Tampil Memukau dengan Nail Art Terbaru</h1>
+            <p class="lead d-none d-sm-block">Ragam desain kuku yang cantik dan elegan, dikerjakan oleh profesional.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="carousel-item c_itm">
+          <img src="..." class="d-block w-100 c_img" alt="Spa and Massage" />
+          <div class="carousel-caption d-block">
+            <h1 class="display-4 fw-bold mb-3">Relaksasi Maksimal dengan Perawatan Spa</h1>
+            <p class="lead d-none d-sm-block">Manjakan diri Anda dengan sesi pijat terbaik kami untuk mengembalikan energi.</p>
+            <a href="#" class="btn btn-warning btn-lg mt-3 shadow-lg text-dark">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="carousel-item c_itm">
+          <img src="..." class="d-block w-100 c_img" alt="Simple Nail Art Design" />
+          <div class="carousel-caption d-block">
+            <h1 class="display-4 fw-bold mb-3">Kecantikan Abadi dengan Klasik Polos</h1>
+            <p class="lead d-none d-sm-block">Desain minimalis yang tetap menonjolkan keindahan alami kuku Anda.</p>
+            <a href="#" class="btn btn-outline-light btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- treetment -->
+
+  <div class="container mt-5 mb-5">
+    <h2 class="text-center mb-4 fw-bold text-dark">💖 Layanan Perawatan Unggulan Kami</h2>
+    <p class="text-center text-muted mb-5">Pilih perawatan kecantikan yang sesuai dengan kebutuhan dan gaya Anda.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="eyelash-dummy.jpg" class="card-img-top card-img-top-custom" alt="Eyelash Extension" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-primary">Eyelash Extension</h5>
+            <p class="card-text text-muted">Bulu mata lentik alami tanpa repot setiap hari. Tahan lama dan nyaman.</p>
+            <a href="#" class="btn btn-outline-primary mt-2">Book Treatments</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="nail-art-dummy.jpg" class="card-img-top card-img-top-custom" alt="Premium Nail Art" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-success">Premium Nail Art</h5>
+            <p class="card-text text-muted">Desain kuku custom mewah dengan bahan berkualitas tinggi dan detail halus.</p>
+            <a href="#" class="btn btn-outline-success mt-2">Book Treatments</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="pedicure-dummy.jpg" class="card-img-top card-img-top-custom" alt="Spa Manicure" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">Spa Manicure & Pedicure</h5>
+            <p class="card-text text-muted">Perawatan lengkap tangan dan kaki, membersihkan dan melembapkan kulit.</p>
+            <a href="#" class="btn btn-outline-danger mt-2">Book Treatments</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mt-4">
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="lash-lift-dummy.jpg" class="card-img-top card-img-top-custom" alt="Lash Lift" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-info">Lash Lift & Tint</h5>
+            <p class="card-text text-muted">Meningkatkan volume bulu mata alami Anda tanpa ekstensi. Hasil instan!</p>
+            <a href="#" class="btn btn-outline-info mt-2">Book Treatments</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="keratin-dummy.jpg" class="card-img-top card-img-top-custom" alt="Keratin Treatment" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-secondary">Hair Keratin Treatment</h5>
+            <p class="card-text text-muted">Rambut lebih lurus, berkilau, dan mudah diatur dengan perawatan keratin.</p>
+            <a href="#" class="btn btn-outline-secondary mt-2">Book Treatments</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="body-massage-dummy.jpg" class="card-img-top card-img-top-custom" alt="Body Massage" />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-warning">Full Body Massage</h5>
+            <p class="card-text text-muted">Terapi pijat untuk meredakan stres, pegal, dan meningkatkan sirkulasi darah.</p>
+            <a href="#" class="btn btn-outline-warning mt-2">Book Treatments</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galery -->
+  <div class="container mb-5">
+    <div class="row">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Gallery Zara Eyelash</h3>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+          2 days ago
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="container my-4">
+          <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1">
+              <h3 class="mb-3">Tulis Komentar Anda</h3>
+              <form>
+                <div class="mb-3">
+                  <label for="reviewComment" class="form-label visually-hidden">Tulis Komentar di Sini</label>
+                  <textarea
+                    class="form-control"
+                    id="reviewComment"
+                    rows="5"
+                    placeholder="Tulis ulasan atau komentar Anda di sini..."
+                    required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light footer-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h4 class="fw-bold text-white mb-2"><i class="bi bi-star-fill text-warning me-2"></i> Zara Eyelash</h4>
+          <p class="text-muted small">Kami berkomitmen memberikan perawatan kecantikan terbaik dan pengalaman memanjakan diri yang tak terlupakan.</p>
+          <p class="text-muted small mb-0">&copy; 2025 Zara Eyelash. All Rights Reserved.</p>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="text-end text-white mb-3">Ikuti Kami</h5>
+          <div class="text-end">
+            <a href="#" class="text-light me-3"><i class="bi bi-whatsapp fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-light me-3"><i class="bi bi-twitter-x fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-facebook fs-3 opacity-75 hover-opacity-100"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
