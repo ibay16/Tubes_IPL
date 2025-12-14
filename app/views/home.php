@@ -50,6 +50,17 @@
       object-fit: cover;
     }
 
+    .card-galery {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-galery-wrapper {
+      height: 250px;
+      width: 250px;
+    }
+
     /* Footer Spacing */
     .footer-section {
       padding: 3rem 0;
@@ -132,7 +143,7 @@
     <h2 class="text-center mb-4 fw-bold text-dark">💖 Layanan Perawatan Unggulan Kami</h2>
     <p class="text-center text-muted mb-5">Pilih perawatan kecantikan yang sesuai dengan kebutuhan dan gaya Anda.</p>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mt-4">
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
           <img src="../../public/img/card1.jpeg" class="card-img-top card-img-top-custom" alt="Eyelash Extension" />
@@ -203,7 +214,7 @@
     </div>
   </div>
 
-  <!-- Galery -->
+  <!-- Gallery -->
   <div class="container mb-5">
     <div class="row">
       <div class="card text-center">
@@ -211,71 +222,55 @@
           <h3>Gallery Zara Eyelash</h3>
         </div>
         <div class="container">
-          <div class="row">
+          <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center mt-4">
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri1.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri2.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri3.jpeg" class="card-img-top card-galery " alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri4.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center mt-4">
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri5.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri6.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri7.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
+            <div class="col ">
+              <div class="card card-galery-wrapper" style="width: 18rem;">
+                <img src="../../public/img/galeri8.jpeg" class="card-img-top card-galery" alt="...">
+                <div class="card-body"></div>
               </div>
             </div>
           </div>
