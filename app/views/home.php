@@ -8,11 +8,54 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
   <title>Zara Eyelash - Beauty & Treatment</title>
   <style>
+    body {
+      background: linear-gradient(180deg, #fde7ef, #fff);
+    }
+
+    :root {
+      --btn-pink: #F5AFAF;
+      --btn-pink-hover: #ee9a9a;
+    }
+
+    .navbar-color {
+      background-color: #FDACAC;
+    }
+
+    .footer_color {
+      background-color: #FDACAC;
+    }
+
+
+    /* Semua button */
+    .btn {
+      background-color: var(--btn-pink) !important;
+      border-color: var(--btn-pink) !important;
+      color: #000 !important;
+    }
+
+    /* Hover */
+    .btn:hover {
+      background-color: var(--btn-pink-hover) !important;
+      border-color: var(--btn-pink-hover) !important;
+      color: #000 !important;
+    }
+
+    /* Outline button (btn-outline-*) */
+    .btn[class*="btn-outline"] {
+      background-color: transparent !important;
+      color: #000 !important;
+      border: 2px solid var(--btn-pink) !important;
+    }
+
+    .btn[class*="btn-outline"]:hover {
+      background-color: var(--btn-pink) !important;
+      color: #000 !important;
+    }
+
     /* Style untuk Carousel Item */
     .c_itm {
       height: 600px;
       position: relative;
-      /* Penting untuk overlay */
     }
 
     /* Style untuk Gambar di Carousel */
@@ -20,7 +63,6 @@
       height: 100%;
       object-fit: cover;
       filter: brightness(0.8);
-      /* Meredupkan gambar sedikit */
     }
 
     /* Overlay untuk teks agar lebih terbaca */
@@ -32,7 +74,6 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.3);
-      /* Overlay gelap */
       z-index: 1;
     }
 
@@ -40,13 +81,11 @@
     .carousel-caption {
       z-index: 2;
       padding-bottom: 5rem;
-      /* Menurunkan caption sedikit */
     }
 
     /* Card Styling */
     .card-img-top-custom {
       height: 50%;
-      /* Tinggi tetap untuk gambar card */
       object-fit: cover;
     }
 
@@ -71,7 +110,7 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-color sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold text-dark" href="#"><i class="bi bi-star-fill text-warning me-2"></i> Zara Eyelash</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +119,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active text-primary fw-bold" aria-current="page" href="#"><i class="bi bi-calendar-check me-1"></i> Go Booking</a>
+            <a class="nav-link active fw-bold" aria-current="page" href="#"><i class="bi bi-calendar-check me-1"></i> Go Booking</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-person-fill-lock me-1"></i> Admin</a>
@@ -218,7 +257,7 @@
   <div class="container mb-5">
     <div class="row">
       <div class="card text-center">
-        <div class="card-header">
+        <div class="card-header" style="background-color: #FD7979;">
           <h3>Gallery Zara Eyelash</h3>
         </div>
         <div class="container">
@@ -309,22 +348,23 @@
     </div>
   </div>
 
-  <footer class="bg-dark text-light footer-section">
+  <footer class="footer_color text-dark footer-section">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 mb-3 mb-md-0">
-          <h4 class="fw-bold text-white mb-2"><i class="bi bi-star-fill text-warning me-2"></i> Zara Eyelash</h4>
-          <p class="text-muted small">Kami berkomitmen memberikan perawatan kecantikan terbaik dan pengalaman memanjakan diri yang tak terlupakan.</p>
-          <p class="text-muted small mb-0">&copy; 2025 Zara Eyelash. All Rights Reserved.</p>
+          <h4 class="fw-bold text-black mb-2"><i class="bi bi-star-fill text-warning me-2"></i> Zara Eyelash</h4>
+          <p class="">ZaraEyelash Indonesia is a premium beauty studio specializing in eyelash extensions, lash lift, and brow treatments.
+            Located in Indonesia, ZaraEyelash was established to provide high-quality beauty services with professional standards. Since its establishment, ZaraEyelash has been known for its comfortable atmosphere, skilled therapists, and satisfying results that enhance natural beauty.</p>
+          <p class="S">&copy; 2025 Zara Eyelash. All Rights Reserved.</p>
         </div>
 
         <div class="col-md-6">
-          <h5 class="text-end text-white mb-3">Ikuti Kami</h5>
+          <h5 class="text-end text-black mb-3">Ikuti Kami</h5>
           <div class="text-end">
-            <a href="#" class="text-light me-3"><i class="bi bi-whatsapp fs-3 opacity-75 hover-opacity-100"></i></a>
-            <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-3 opacity-75 hover-opacity-100"></i></a>
-            <a href="#" class="text-light me-3"><i class="bi bi-twitter-x fs-3 opacity-75 hover-opacity-100"></i></a>
-            <a href="#" class="text-light"><i class="bi bi-facebook fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-black me-3"><i class="bi bi-whatsapp fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-black me-3"><i class="bi bi-instagram fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-black me-3"><i class="bi bi-twitter-x fs-3 opacity-75 hover-opacity-100"></i></a>
+            <a href="#" class="text-black"><i class="bi bi-facebook fs-3 opacity-75 hover-opacity-100"></i></a>
           </div>
         </div>
       </div>
