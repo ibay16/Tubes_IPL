@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "ibay2003";
+$pass = "";
 $db = "zara_eyelash";
 
 
