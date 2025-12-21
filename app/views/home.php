@@ -119,10 +119,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active fw-bold" aria-current="page" href="#"><i class="bi bi-calendar-check me-1"></i> Go Booking</a>
+            <a class="nav-link active fw-bold" aria-current="page" href="index.php?page=booking"><i class="bi bi-calendar-check me-1"></i> Go Booking</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-person-fill-lock me-1"></i> Admin</a>
+            <a class="nav-link" href="index.php?page=admin"><i class="bi bi-person-fill-lock me-1"></i> Admin</a>
           </li>
         </ul>
       </div>
@@ -139,29 +139,29 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active c_itm">
-          <img src="/Tubes_IPL/public/img/carousel1.jpeg" class="d-block w-100 c_img" alt="Nail Art Treatment" />
+          <img src="public/img/carousel1.jpeg" class="d-block w-100 c_img" alt="Nail Art Treatment" />
           <div class="carousel-caption d-block">
             <h1 class="display-4 fw-bold mb-3">Tampil Memukau dengan Nail Art Terbaru</h1>
             <p class="lead d-none d-sm-block">Ragam desain kuku yang cantik dan elegan, dikerjakan oleh profesional.</p>
-            <a href="#" class="btn btn-primary btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
+            <a href="index.php?page=booking" class="btn btn-primary btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
           </div>
         </div>
 
         <div class="carousel-item c_itm">
-          <img src="/Tubes_IPL/public/img/carousel2.jpeg" class="d-block w-100 c_img" alt="Spa and Massage" />
+          <img src="public/img/carousel2.jpeg" class="d-block w-100 c_img" alt="Spa and Massage" />
           <div class="carousel-caption d-block">
             <h1 class="display-4 fw-bold mb-3">Percantik Matamu dengan Eyelash Terbaik</h1>
             <p class="lead d-none d-sm-block">Sentuhan lembut untuk tampilan natural setiap hari.</p>
-            <a href="#" class="btn btn-warning btn-lg mt-3 shadow-lg text-dark">Pesan Sekarang</a>
+            <a href="index.php?page=booking" class="btn btn-warning btn-lg mt-3 shadow-lg text-dark">Pesan Sekarang</a>
           </div>
         </div>
 
         <div class="carousel-item c_itm">
-          <img src="/Tubes_IPL/public/img/carousel3.jpeg" class="d-block w-100 c_img" alt="Classic Nail Design" />
+          <img src="public/img/carousel3.jpeg" class="d-block w-100 c_img" alt="Classic Nail Design" />
           <div class="carousel-caption d-block">
             <h1 class="display-4 fw-bold mb-3">Nail Art Stylish, Percaya Diri Meningkat</h1>
             <p class="lead d-none d-sm-block">Desain trendi dengan hasil maksimal.</p>
-            <a href="#" class="btn btn-outline-light btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
+            <a href="index.php?page=booking" class="btn btn-outline-light btn-lg mt-3 shadow-lg">Pesan Sekarang</a>
           </div>
         </div>
       </div>
@@ -185,7 +185,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mt-4">
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="../../public/img/card1.jpeg" class="card-img-top card-img-top-custom" alt="Eyelash Extension" />
+          <img src="public/img/card1.jpeg" class="card-img-top card-img-top-custom" alt="Eyelash Extension" />
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-primary">Classic Eyelash Extension</h5>
             <p class="card-text text-muted">Bulu mata lentik alami untuk tampilan natural sehari-hari.</p>
@@ -196,7 +196,7 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="../../public/img/card2.jpeg" class="card-img-top card-img-top-custom" alt="Premium Nail Art" />
+          <img src="public/img/card2.jpeg" class="card-img-top card-img-top-custom" alt="Premium Nail Art" />
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-success">Natural Eyelash Extension</h5>
             <p class="card-text text-muted">Memberi efek rapi dan ringan dengan hasil yang terlihat natural.</p>
@@ -207,7 +207,7 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="../../public/img/card3.jpeg" class="card-img-top card-img-top-custom" alt="Spa Manicure" />
+          <img src="public/img/card3.jpeg" class="card-img-top card-img-top-custom" alt="Spa Manicure" />
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-danger">Volume Eyelash Extension</h5>
             <p class="card-text text-muted">Bulu mata lebih tebal dan dramatis tanpa terasa berat.</p>
@@ -220,7 +220,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mt-4">
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="../../public/img/card4.jpeg" class="card-img-top card-img-top-custom" alt="Lash Lift" />
+          <img src="public/img/card4.jpeg" class="card-img-top card-img-top-custom" alt="Lash Lift" />
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-info">Natural Nail Art</h5>
             <p class="card-text text-muted">Desain kuku simpel dengan warna lembut dan elegan.</p>
@@ -231,7 +231,7 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="../../public/img/card5.jpeg" class="card-img-top card-img-top-custom" alt="Keratin Treatment" />
+          <img src="public/img/card5.jpeg" class="card-img-top card-img-top-custom" alt="Keratin Treatment" />
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-secondary">Elegant Nail Art</h5>
             <p class="card-text text-muted">Kombinasi warna dan detail halus untuk tampilan kuku mewah.</p>
@@ -242,7 +242,7 @@
 
       <div class="col">
         <div class="card h-100 shadow-sm border-0">
-          <img src="../../public/img/card6.jpeg" class="card-img-top card-img-top-custom" alt="Body Massage" />
+          <img src="public/img/card6.jpeg" class="card-img-top card-img-top-custom" alt="Body Massage" />
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-warning">Floral Nail Art</h5>
             <p class="card-text text-muted">Hiasan kuku bermotif bunga yang cantik dan feminin.</p>
@@ -264,25 +264,25 @@
           <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center mt-4">
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri1.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri1.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri2.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri2.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri3.jpeg" class="card-img-top card-galery " alt="...">
+                <img src="public/img/galeri3.jpeg" class="card-img-top card-galery " alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri4.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri4.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
@@ -290,25 +290,25 @@
           <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center mt-4">
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri5.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri5.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri6.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri6.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
             <div class="col">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri7.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri7.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
             <div class="col ">
               <div class="card card-galery-wrapper" style="width: 18rem;">
-                <img src="../../public/img/galeri8.jpeg" class="card-img-top card-galery" alt="...">
+                <img src="public/img/galeri8.jpeg" class="card-img-top card-galery" alt="...">
                 <div class="card-body"></div>
               </div>
             </div>
@@ -328,11 +328,12 @@
           <div class="row">
             <div class="col-12 col-lg-10 offset-lg-1">
               <h3 class="mb-3">Tulis Komentar Anda</h3>
-              <form>
+              <form action="index.php?page=home&action=sendComment" method="POST">
                 <div class="mb-3">
                   <label for="reviewComment" class="form-label visually-hidden">Tulis Komentar di Sini</label>
                   <textarea
                     class="form-control"
+                    name="comment_text"
                     id="reviewComment"
                     rows="5"
                     placeholder="Tulis ulasan atau komentar Anda di sini..."
