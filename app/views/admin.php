@@ -1,26 +1,20 @@
 <?php
 // ===============================
-// KONEKSI & DATA (DITAMBAHKAN)
+// KONEKSI DATABASE
 // ===============================
+require_once "../../config/database.php";
 
-// koneksi database
-require_once __DIR__ . "/../../config/database.php";
+// ===============================
+// AMBIL DATA BOOKING
+// ===============================
+$bookingQuery = "SELECT * FROM bookings ORDER BY tanggal DESC";
+$bookings = $conn->query($bookingQuery);
 
-// model
-require_once __DIR__ . "/../models/Booking.php";
-require_once __DIR__ . "/../models/Comment.php";
-
-// buka koneksi
-$database = new Database();
-$db = $database->getConnection();
-
-// ambil data booking
-$bookingModel = new Booking($db);
-$bookings = $bookingModel->getAll();
-
-// ambil data komentar
-$commentModel = new Comment($db);
-$comments = $commentModel->getAll();
+// ===============================
+// AMBIL DATA KOMENTAR
+// ===============================
+$commentQuery = "SELECT * FROM comments ORDER BY created_at DESC";
+$comments = $conn->query($commentQuery);
 ?>
 
 <!DOCTYPE html>
@@ -40,17 +34,12 @@ $comments = $commentModel->getAll();
     --card: #ffffff;
     --radius: 14px;
 }
-
-* {
-    box-sizing: border-box;
-}
-
+* { box-sizing: border-box; }
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
     background: linear-gradient(180deg, var(--bg), #fff);
 }
-
 .header {
     background: var(--pink);
     color: white;
@@ -58,16 +47,13 @@ body {
     padding: 24px;
     font-family: "Playfair Display", serif;
     font-size: 28px;
-    letter-spacing: 1px;
 }
-
 .sub-header {
     text-align: center;
     margin-top: 10px;
     color: #555;
     font-size: 14px;
 }
-
 .container {
     width: 95%;
     margin: 30px auto;
@@ -76,52 +62,40 @@ body {
     border-radius: var(--radius);
     box-shadow: 0 12px 35px rgba(0,0,0,0.1);
 }
-
 h2 {
     margin-top: 0;
     color: var(--pink-dark);
     font-family: "Playfair Display", serif;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 16px;
     font-size: 14px;
 }
-
 th {
     background: var(--pink);
     color: white;
     padding: 12px;
 }
-
 td {
     padding: 10px;
     border-bottom: 1px solid #eee;
 }
-
-tr:hover td {
-    background: #fde7ef;
-}
-
+tr:hover td { background: #fde7ef; }
 .footer {
     margin-top: 40px;
     padding: 20px;
     background: #fdacac;
     text-align: center;
     font-size: 13px;
-    color: #333;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    Dashboard Admin – ZaraEyelash
-</div>
+<div class="header">Dashboard Admin – ZaraEyelash</div>
 <div class="sub-header">
     Halaman khusus admin untuk melihat data booking dan komentar pelanggan
 </div>
@@ -142,7 +116,7 @@ tr:hover td {
     <th>Status</th>
 </tr>
 
-<?php while ($row = $bookings->fetch(PDO::FETCH_ASSOC)) : ?>
+<?php while ($row = $bookings->fetch_assoc()) : ?>
 <tr>
     <td><?= $row['nama']; ?></td>
     <td><?= $row['no_hp']; ?></td>
@@ -168,10 +142,7 @@ tr:hover td {
     <th>Tanggal</th>
 </tr>
 
-<?php
-$no = 1;
-while ($row = $comments->fetch(PDO::FETCH_ASSOC)) :
-?>
+<?php $no = 1; while ($row = $comments->fetch_assoc()) : ?>
 <tr>
     <td><?= $no++; ?></td>
     <td><?= htmlspecialchars($row['komentar']); ?></td>
@@ -181,10 +152,9 @@ while ($row = $comments->fetch(PDO::FETCH_ASSOC)) :
 </table>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-    &copy; 2025 Zara Eyelash – Admin Panel  
-    <br> Sistem Informasi Booking & Komentar Pelanggan
+    &copy; 2025 Zara Eyelash – Admin Panel<br>
+    Sistem Informasi Booking & Komentar Pelanggan
 </div>
 
 </body>
