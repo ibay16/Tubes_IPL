@@ -1,24 +1,26 @@
 <?php
 
+require_once 'config/database.php';
 
-require_once 'app/config/database.php';
-
-//Memuat Controller dan Model
+// Memuat Controller
 require_once 'app/controllers/HomeController.php';
 require_once 'app/controllers/BookingController.php';
 require_once 'app/controllers/AdminController.php';
-require_once 'app/models/Booking.php';
-require_once 'app/models/Comment.php';
 
-// 3. Routing Sederhana
-// Mengambil parameter 'page' dari URL, contoh: index.php?page=booking
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+// Ambil parameter page & action
+$page   = $_GET['page']   ?? 'home';
+$action = $_GET['action'] ?? 'index';
 
-// 4. Logika Pemanggilan Controller
+// Routing
 switch ($page) {
   case 'home':
     $controller = new HomeController();
-    $controller->index();
+
+    if (method_exists($controller, $action)) {
+      $controller->$action();
+    } else {
+      $controller->index();
+    }
     break;
 
   case 'booking':
