@@ -12,7 +12,7 @@ class Booking
 
     public function create($data)
     {
-        $sql = "INSERT INTO bookings 
+        $sql = "INSERT INTO booking 
                 (nama, no_hp, email, layanan, tanggal, jam, catatan)
                 VALUES
                 (:nama, :no_hp, :email, :layanan, :tanggal, :jam, :catatan)";
@@ -23,7 +23,7 @@ class Booking
 
     public function getAll()
     {
-        $sql = "SELECT * FROM bookings ORDER BY tanggal DESC, jam DESC";
+        $sql = "SELECT * FROM booking ORDER BY tanggal DESC, jam DESC";
         $stmt = $this->conn->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
