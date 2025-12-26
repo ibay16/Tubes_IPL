@@ -1,8 +1,11 @@
 <?php
 
-require_once 'config/database.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Memuat Controller
+require_once 'app/config/database.php';
+
+// Load Controllers
 require_once 'app/controllers/HomeController.php';
 require_once 'app/controllers/BookingController.php';
 require_once 'app/controllers/AdminController.php';
@@ -13,27 +16,24 @@ $action = $_GET['action'] ?? 'index';
 
 // Routing
 switch ($page) {
-  case 'home':
-    $controller = new HomeController();
+    case 'home':
+        $controller = new HomeController();
 
-    if (method_exists($controller, $action)) {
-      $controller->$action();
-    } else {
-      $controller->index();
-    }
-    break;
+        if (method_exists($controller, $action)) {
+            $controller->$action();
+        } else {
+            $controller->index();
+        }
+        break;
 
-  case 'booking':
-    $controller = new BookingController();
-    $controller->index();
-    break;
+    case 'booking':
+        (new BookingController())->index();
+        break;
 
-  case 'admin':
-    $controller = new AdminController();
-    $controller->index();
-    break;
+    case 'admin':
+        (new AdminController())->index();
+        break;
 
-  default:
-    echo "Halaman tidak ditemukan";
-    break;
+    default:
+        echo "Halaman tidak ditemukan";
 }
