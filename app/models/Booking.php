@@ -20,4 +20,11 @@ class Booking
         $stmt = $this->conn->prepare($sql);
         return $stmt->execute($data);
     }
+
+    public function getAll()
+    {
+        $sql = "SELECT * FROM bookings ORDER BY tanggal DESC, jam DESC";
+        $stmt = $this->conn->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
