@@ -3,16 +3,21 @@
 class Booking
 {
     private $conn;
-    private $table = "booking";
+    private $table = "bookings";
 
     public function __construct($db)
     {
         $this->conn = $db;
     }
 
-    public function getAll()
+    public function create($data)
     {
-        $query = "SELECT * FROM {$this->table} ORDER BY tanggal DESC";
-        return $this->conn->query($query);
+        $sql = "INSERT INTO bookings 
+                (nama, no_hp, email, layanan, tanggal, jam, catatan)
+                VALUES
+                (:nama, :no_hp, :email, :layanan, :tanggal, :jam, :catatan)";
+
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute($data);
     }
 }
