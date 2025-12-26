@@ -14,7 +14,16 @@ class BookingController
     // tampilkan form booking
     public function index()
     {
-        require_once 'app/views/booking.php';
+        // Model Booking
+        $bookingModel = new Booking($this->db);
+        $bookings = $bookingModel->getAll();
+
+        // Model Comment
+        $commentModel = new Comment($this->db);
+        $comments = $commentModel->getAll();
+
+        // Kirim ke view
+        require_once 'app/views/admin.php';
     }
 
     // simpan data booking
