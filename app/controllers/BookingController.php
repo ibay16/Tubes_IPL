@@ -11,19 +11,10 @@ class BookingController
         $this->db = Database::connect();
     }
 
-    // tampilkan form booking
+    // tampilkan FORM booking
     public function index()
     {
-        // Model Booking
-        $bookingModel = new Booking($this->db);
-        $bookings = $bookingModel->getAll();
-
-        // Model Comment
-        $commentModel = new Comment($this->db);
-        $comments = $commentModel->getAll();
-
-        // Kirim ke view
-        require_once 'app/views/admin.php';
+        require_once 'app/views/booking.php';
     }
 
     // simpan data booking
@@ -43,6 +34,7 @@ class BookingController
             ]);
 
             header("Location: index.php?page=booking&status=success");
+            exit;
         }
     }
 }
