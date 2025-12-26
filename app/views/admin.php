@@ -1,22 +1,3 @@
-<?php
-// ===============================
-// KONEKSI DATABASE
-// ===============================
-require_once "../../config/database.php";
-
-// ===============================
-// AMBIL DATA BOOKING
-// ===============================
-$bookingQuery = "SELECT * FROM bookings ORDER BY tanggal DESC";
-$bookings = $conn->query($bookingQuery);
-
-// ===============================
-// AMBIL DATA KOMENTAR
-// ===============================
-$commentQuery = "SELECT * FROM comments ORDER BY created_at DESC";
-$comments = $conn->query($commentQuery);
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -116,7 +97,7 @@ tr:hover td { background: #fde7ef; }
     <th>Status</th>
 </tr>
 
-<?php while ($row = $bookings->fetch_assoc()) : ?>
+<?php while ($row = $bookings->fetch(PDO::FETCH_ASSOC)) : ?>
 <tr>
     <td><?= $row['nama']; ?></td>
     <td><?= $row['no_hp']; ?></td>
@@ -127,7 +108,7 @@ tr:hover td { background: #fde7ef; }
     <td><?= $row['catatan']; ?></td>
     <td><?= $row['status']; ?></td>
 </tr>
-<?php endwhile; ?>
+<?php endwhile; ?>
 </table>
 </div>
 
@@ -142,13 +123,13 @@ tr:hover td { background: #fde7ef; }
     <th>Tanggal</th>
 </tr>
 
-<?php $no = 1; while ($row = $comments->fetch_assoc()) : ?>
+<?php $no = 1; while ($row = $comments->fetch(PDO::FETCH_ASSOC)) : ?>
 <tr>
     <td><?= $no++; ?></td>
-    <td><?= htmlspecialchars($row['komentar']); ?></td>
+    <td><?= htmlspecialchars($row['isi_komentar']); ?></td>
     <td><?= $row['created_at']; ?></td>
 </tr>
-<?php endwhile; ?>
+<?php endwhile; ?>
 </table>
 </div>
 
