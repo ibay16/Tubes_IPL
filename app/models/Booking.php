@@ -3,7 +3,7 @@
 class Booking
 {
     private $conn;
-    private $table = "bookings";
+    private $table = "booking";
 
     public function __construct($db)
     {
