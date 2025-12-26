@@ -97,7 +97,7 @@ tr:hover td { background: #fde7ef; }
     <th>Status</th>
 </tr>
 
-<?php while ($row = $bookings->fetch(PDO::FETCH_ASSOC)) : ?>
+<?php foreach ($bookings as $row) : ?>
 <tr>
     <td><?= $row['nama']; ?></td>
     <td><?= $row['no_hp']; ?></td>
@@ -106,9 +106,9 @@ tr:hover td { background: #fde7ef; }
     <td><?= $row['tanggal']; ?></td>
     <td><?= $row['jam']; ?></td>
     <td><?= $row['catatan']; ?></td>
-    <td><?= $row['status']; ?></td>
+    <td><?= $row['status'] ?? '-'; ?></td>
 </tr>
-<?php endwhile; ?>
+<?php endforeach; ?>
 </table>
 </div>
 
@@ -129,7 +129,7 @@ tr:hover td { background: #fde7ef; }
     <td><?= htmlspecialchars($row['isi_komentar']); ?></td>
     <td><?= $row['created_at']; ?></td>
 </tr>
-<?php endwhile; ?>
+<?php endwhile; ?>
 </table>
 </div>
 
