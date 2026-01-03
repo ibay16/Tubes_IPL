@@ -166,6 +166,22 @@
       font-weight: 600;
       color: #333;
     }
+
+    .btn-home {
+      display: block;
+      margin-top: 12px;
+      text-align: center;
+      padding: 11px;
+      border-radius: 9px;
+      background: #ddd;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-home:hover {
+      background: #ccc;
+    }
   </style>
 </head>
 
@@ -177,7 +193,7 @@
       <p>Book Your Treatment</p>
     </div>
 
-    <form id="bookingForm" novalidate>
+    <form id="bookingForm" method="POST" action="index.php?page=booking&action=store" novalidate>
 
       <label>Nama</label>
       <input type="text" name="nama" placeholder="Contoh: Fifin" required>
@@ -221,6 +237,9 @@
       </div>
 
     </form>
+    <a href="index.php?page=home" class="btn-home">
+      Kembali ke Halaman Utama
+    </a>
   </div>
 
   <!-- MODAL PREVIEW -->
@@ -248,7 +267,7 @@
     const modal = document.getElementById("previewModal");
     const successMsg = document.getElementById("successMsg");
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
@@ -272,8 +291,7 @@
 
     function konfirmasiKirim() {
       modal.style.display = "none";
-      successMsg.style.display = "block";
-      form.reset();
+      form.submit();
       setTimeout(() => successMsg.style.display = "none", 3000);
     }
   </script>
