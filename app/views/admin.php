@@ -130,7 +130,7 @@ tr:hover td { background: #fde7ef; }
 <!-- HEADER -->
 <div class="header">
     Dashboard Admin – ZaraEyelash
-    <a href="/zara_eyelash/Tubes_IPL/index.php" class="back-home">⬅ Halaman Utama</a>
+    <a href="../../index.php" class="back-home">⬅ Halaman Utama</a>
 </div>
 
 <div class="sub-header">
