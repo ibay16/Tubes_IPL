@@ -1,3 +1,32 @@
+<?php
+// ==================================
+// AKTIFKAN ERROR (BANTU DEBUG)
+// ==================================
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// ==================================
+// KONEKSI DATABASE (PDO)
+// ==================================
+require_once __DIR__ . "/../../config/database.php";
+
+$db = Database::connect();
+
+// ==================================
+// QUERY DATA BOOKING
+// ==================================
+$stmtBooking = $db->prepare("SELECT * FROM booking ORDER BY tanggal DESC");
+$stmtBooking->execute();
+$bookings = $stmtBooking->fetchAll();
+
+// ==================================
+// QUERY DATA KOMENTAR
+// ==================================
+$stmtKomentar = $db->prepare("SELECT * FROM komentar ORDER BY created_at DESC");
+$stmtKomentar->execute();
+$comments = $stmtKomentar->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -28,6 +57,19 @@ body {
     padding: 24px;
     font-family: "Playfair Display", serif;
     font-size: 28px;
+    position: relative;
+}
+.back-home {
+    position: absolute;
+    right: 20px;
+    top: 24px;
+    background: white;
+    color: var(--pink);
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
 }
 .sub-header {
     text-align: center;
@@ -64,6 +106,15 @@ td {
     border-bottom: 1px solid #eee;
 }
 tr:hover td { background: #fde7ef; }
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+.btn-edit { background: #4caf50; color: white; }
+.btn-delete { background: #f44336; color: white; }
 .footer {
     margin-top: 40px;
     padding: 20px;
@@ -76,12 +127,17 @@ tr:hover td { background: #fde7ef; }
 
 <body>
 
-<div class="header">Dashboard Admin – ZaraEyelash</div>
-<div class="sub-header">
-    Halaman khusus admin untuk melihat data booking dan komentar pelanggan
+<!-- HEADER -->
+<div class="header">
+    Dashboard Admin – ZaraEyelash
+    <a href="/zara_eyelash/Tubes_IPL/index.php" class="back-home">⬅ Halaman Utama</a>
 </div>
 
-<!-- BOOKING -->
+<div class="sub-header">
+    Halaman khusus admin untuk melihat & mengelola data
+</div>
+
+<!-- ================= BOOKING ================= -->
 <div class="container">
 <h2>📋 Data Booking Pelanggan</h2>
 
@@ -95,9 +151,11 @@ tr:hover td { background: #fde7ef; }
     <th>Jam</th>
     <th>Catatan</th>
     <th>Status</th>
+    <th>Aksi</th>
 </tr>
 
-<?php foreach ($bookings as $row) : ?>
+<?php if (count($bookings) > 0): ?>
+<?php foreach ($bookings as $row): ?>
 <tr>
     <td><?= $row['nama']; ?></td>
     <td><?= $row['no_hp']; ?></td>
@@ -106,13 +164,20 @@ tr:hover td { background: #fde7ef; }
     <td><?= $row['tanggal']; ?></td>
     <td><?= $row['jam']; ?></td>
     <td><?= $row['catatan']; ?></td>
-    <td><?= $row['status'] ?? '-'; ?></td>
+    <td><?= $row['status'] ?? 'Pending'; ?></td>
+    <td>
+        <button class="btn btn-edit">Edit</button>
+        <button class="btn btn-delete">Hapus</button>
+    </td>
 </tr>
 <?php endforeach; ?>
+<?php else: ?>
+<tr><td colspan="9" align="center">Belum ada data booking</td></tr>
+<?php endif; ?>
 </table>
 </div>
 
-<!-- KOMENTAR -->
+<!-- ================= KOMENTAR ================= -->
 <div class="container">
 <h2>📝 Komentar Pelanggan</h2>
 
@@ -123,13 +188,17 @@ tr:hover td { background: #fde7ef; }
     <th>Tanggal</th>
 </tr>
 
-<?php $no = 1; while ($row = $comments->fetch(PDO::FETCH_ASSOC)) : ?>
+<?php if (count($comments) > 0): ?>
+<?php $no = 1; foreach ($comments as $row): ?>
 <tr>
     <td><?= $no++; ?></td>
     <td><?= htmlspecialchars($row['isi_komentar']); ?></td>
     <td><?= $row['created_at']; ?></td>
 </tr>
-<?php endwhile; ?>
+<?php endforeach; ?>
+<?php else: ?>
+<tr><td colspan="3" align="center">Belum ada komentar</td></tr>
+<?php endif; ?>
 </table>
 </div>
 
