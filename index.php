@@ -27,8 +27,14 @@ switch ($page) {
         break;
 
     case 'booking':
-        (new BookingController())->index();
-        break;
+    $controller = new BookingController();
+
+    if (method_exists($controller, $action)) {
+        $controller->$action();
+    } else {
+        $controller->index();
+    }
+    break;
 
     case 'admin':
         (new AdminController())->index();
