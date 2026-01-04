@@ -189,7 +189,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-primary">Classic Eyelash Extension</h5>
             <p class="card-text text-muted">Bulu mata lentik alami untuk tampilan natural sehari-hari.</p>
-            <a href="#" class="btn btn-outline-primary mt-2">Book Treatments</a>
+            <a href="index.php?page=booking" class="btn btn-outline-primary mt-2">Book Treatments</a>
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-success">Natural Eyelash Extension</h5>
             <p class="card-text text-muted">Memberi efek rapi dan ringan dengan hasil yang terlihat natural.</p>
-            <a href="#" class="btn btn-outline-success mt-2">Book Treatments</a>
+            <a href="index.php?page=booking" class="btn btn-outline-success mt-2">Book Treatments</a>
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-danger">Volume Eyelash Extension</h5>
             <p class="card-text text-muted">Bulu mata lebih tebal dan dramatis tanpa terasa berat.</p>
-            <a href="#" class="btn btn-outline-danger mt-2">Book Treatments</a>
+            <a href="index.php?page=booking" class="btn btn-outline-danger mt-2">Book Treatments</a>
           </div>
         </div>
       </div>
@@ -224,7 +224,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-info">Natural Nail Art</h5>
             <p class="card-text text-muted">Desain kuku simpel dengan warna lembut dan elegan.</p>
-            <a href="#" class="btn btn-outline-info mt-2">Book Treatments</a>
+            <a href="index.php?page=booking" class="btn btn-outline-info mt-2">Book Treatments</a>
           </div>
         </div>
       </div>
@@ -235,7 +235,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-secondary">Elegant Nail Art</h5>
             <p class="card-text text-muted">Kombinasi warna dan detail halus untuk tampilan kuku mewah.</p>
-            <a href="#" class="btn btn-outline-secondary mt-2">Book Treatments</a>
+            <a href="index.php?page=booking" class="btn btn-outline-secondary mt-2">Book Treatments</a>
           </div>
         </div>
       </div>
@@ -246,7 +246,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold text-warning">Floral Nail Art</h5>
             <p class="card-text text-muted">Hiasan kuku bermotif bunga yang cantik dan feminin.</p>
-            <a href="#" class="btn btn-outline-warning mt-2">Book Treatments</a>
+            <a href="index.php?page=booking" class="btn btn-outline-warning mt-2">Book Treatments</a>
           </div>
         </div>
       </div>
