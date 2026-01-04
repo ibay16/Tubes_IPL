@@ -3,7 +3,7 @@
 class Comment
 {
     private $conn;
-    private $table = "komentar"; // ✅ sesuai DB
+    private $table = "komentar"; 
 
     public function __construct($db)
     {
