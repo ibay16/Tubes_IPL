@@ -196,11 +196,6 @@ $comments = $stmtKomentar->fetchAll();
                         <td><?= $row['catatan']; ?></td>
                         <td><?= $row['status'] ?? 'Pending'; ?></td>
                         <td>
-                            <a href="index.php?page=admin&action=edit&id=<?= $row['id_booking']; ?>"
-                                class="btn btn-edit">
-                                Edit
-                            </a>
-
                             <a href="index.php?page=admin&action=delete&id=<?= $row['id_booking']; ?>"
                                 class="btn btn-delete"
                                 onclick="return confirm('Yakin ingin menghapus data ini?')">
