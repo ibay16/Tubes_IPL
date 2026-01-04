@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -27,18 +28,25 @@ switch ($page) {
         break;
 
     case 'booking':
-    $controller = new BookingController();
+        $controller = new BookingController();
 
-    if (method_exists($controller, $action)) {
-        $controller->$action();
-    } else {
-        $controller->index();
-    }
-    break;
+        if (method_exists($controller, $action)) {
+            $controller->$action();
+        } else {
+            $controller->index();
+        }
+        break;
 
     case 'admin':
-        (new AdminController())->index();
+        $controller = new AdminController();
+
+        if (method_exists($controller, $action)) {
+            $controller->$action();
+        } else {
+            $controller->index();
+        }
         break;
+
 
     default:
         echo "Halaman tidak ditemukan";
