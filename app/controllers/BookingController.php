@@ -11,17 +11,28 @@ class BookingController
         $this->db = Database::connect();
     }
 
-    // tampilkan FORM booking
     public function index()
     {
         require_once 'app/views/booking.php';
     }
 
-    // simpan data booking
+    // --- TAMBAHKAN METHOD INI ---
+    public function riwayat()
+    {
+        $bookings = [];
+        $search = $_GET['search'] ?? null;
+
+        if ($search) {
+            $bookingModel = new Booking($this->db);
+            $bookings = $bookingModel->getByPhone($search);
+        }
+
+        require_once 'app/views/riwayat.php';
+    }
+
     public function store()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $booking = new Booking($this->db);
             $booking->create([
                 'nama'    => $_POST['nama'],
