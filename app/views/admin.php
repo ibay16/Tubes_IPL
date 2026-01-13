@@ -3,29 +3,43 @@ if (!isset($_SESSION['admin'])) {
     header("Location: index.php?page=admin");
     exit;
 }
-// ==================================
-// AKTIFKAN ERROR (BANTU DEBUG)
-// ==================================
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// ==================================
-// KONEKSI DATABASE (PDO)
-// ==================================
 require_once __DIR__ . "/../../config/database.php";
-
 $db = Database::connect();
 
 // ==================================
-// QUERY DATA BOOKING
+// LOGIKA UPDATE BOOKING
 // ==================================
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_booking'])) {
+    $id = $_POST['id_booking'];
+    $status = $_POST['status'];
+    $layanan = $_POST['layanan'];
+    $tanggal = $_POST['tanggal'];
+    $jam = $_POST['jam'];
+
+    $query = "UPDATE booking SET status = :status, layanan = :layanan, tanggal = :tanggal, jam = :jam WHERE id_booking = :id";
+    $stmt = $db->prepare($query);
+    $stmt->execute([
+        'status' => $status,
+        'layanan' => $layanan,
+        'tanggal' => $tanggal,
+        'jam' => $jam,
+        'id' => $id
+    ]);
+
+    header("Location: index.php?page=admin");
+    exit;
+}
+
+// QUERY DATA BOOKING
 $stmtBooking = $db->prepare("SELECT * FROM booking ORDER BY tanggal DESC");
 $stmtBooking->execute();
 $bookings = $stmtBooking->fetchAll();
 
-// ==================================
 // QUERY DATA KOMENTAR
-// ==================================
 $stmtKomentar = $db->prepare("SELECT * FROM komentar ORDER BY created_at DESC");
 $stmtKomentar->execute();
 $comments = $stmtKomentar->fetchAll();
@@ -38,7 +52,6 @@ $comments = $stmtKomentar->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard – ZaraEyelash</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -83,13 +96,6 @@ $comments = $stmtKomentar->fetchAll();
             font-weight: 600;
         }
 
-        .sub-header {
-            text-align: center;
-            margin-top: 10px;
-            color: #555;
-            font-size: 14px;
-        }
-
         .container {
             width: 95%;
             margin: 30px auto;
@@ -116,15 +122,12 @@ $comments = $stmtKomentar->fetchAll();
             background: var(--pink);
             color: white;
             padding: 12px;
+            text-align: left;
         }
 
         td {
             padding: 10px;
             border-bottom: 1px solid #eee;
-        }
-
-        tr:hover td {
-            background: #fde7ef;
         }
 
         .btn {
@@ -133,6 +136,8 @@ $comments = $stmtKomentar->fetchAll();
             border: none;
             cursor: pointer;
             font-size: 12px;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-edit {
@@ -152,78 +157,91 @@ $comments = $stmtKomentar->fetchAll();
             text-align: center;
             font-size: 13px;
         }
+
+        /* MODAL CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: var(--radius);
+            width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
     <div class="header">
         Dashboard Admin – ZaraEyelash
         <a href="/Tubes_IPL/index.php" class="back-home">⬅ Halaman Utama</a>
     </div>
 
-    <div class="sub-header">
-        Halaman khusus admin untuk melihat & mengelola data
-    </div>
-
-    <!-- ================= BOOKING ================= -->
     <div class="container">
         <h2>📋 Data Booking Pelanggan</h2>
-
         <table>
             <tr>
                 <th>Nama</th>
                 <th>No HP</th>
-                <th>Email</th>
                 <th>Layanan</th>
                 <th>Tanggal</th>
                 <th>Jam</th>
-                <th>Catatan</th>
                 <th>Status</th>
                 <th>Aksi</th>
             </tr>
-
-            <?php if (count($bookings) > 0): ?>
-                <?php foreach ($bookings as $row): ?>
-                    <tr>
-                        <td><?= $row['nama']; ?></td>
-                        <td><?= $row['no_hp']; ?></td>
-                        <td><?= $row['email']; ?></td>
-                        <td><?= $row['layanan']; ?></td>
-                        <td><?= $row['tanggal']; ?></td>
-                        <td><?= $row['jam']; ?></td>
-                        <td><?= $row['catatan']; ?></td>
-                        <td><?= $row['status'] ?? 'Pending'; ?></td>
-                        <td>
-                            <a href="index.php?page=admin&action=delete&id=<?= $row['id_booking']; ?>"
-                                class="btn btn-delete"
-                                onclick="return confirm('Yakin ingin menghapus data ini?')">
-                                Hapus
-                            </a>
-                        </td>
-
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
+            <?php foreach ($bookings as $row): ?>
                 <tr>
-                    <td colspan="9" align="center">Belum ada data booking</td>
+                    <td><?= $row['nama']; ?></td>
+                    <td><?= $row['no_hp']; ?></td>
+                    <td><?= $row['layanan']; ?></td>
+                    <td><?= $row['tanggal']; ?></td>
+                    <td><?= $row['jam']; ?></td>
+                    <td><strong><?= $row['status'] ?? 'Pending'; ?></strong></td>
+                    <td>
+                        <button class="btn btn-edit" onclick="openEditModal(<?= htmlspecialchars(json_encode($row)); ?>)">Edit Status</button>
+                        <a href="index.php?page=admin&action=delete&id=<?= $row['id_booking']; ?>" class="btn btn-delete" onclick="return confirm('Hapus data?')">Hapus</a>
+                    </td>
                 </tr>
-            <?php endif; ?>
+            <?php endforeach; ?>
         </table>
     </div>
 
-    <!-- ================= KOMENTAR ================= -->
     <div class="container">
         <h2>📝 Komentar Pelanggan</h2>
-
         <table>
             <tr>
                 <th>No</th>
                 <th>Isi Komentar</th>
                 <th>Tanggal</th>
             </tr>
-
             <?php if (count($comments) > 0): ?>
                 <?php $no = 1;
                 foreach ($comments as $row): ?>
@@ -241,11 +259,56 @@ $comments = $stmtKomentar->fetchAll();
         </table>
     </div>
 
-    <div class="footer">
-        &copy; 2025 Zara Eyelash – Admin Panel<br>
-        Sistem Informasi Booking & Komentar Pelanggan
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3 style="color:var(--pink)">Edit Booking</h3>
+            <form action="" method="POST">
+                <input type="hidden" name="id_booking" id="edit_id">
+                <div class="form-group">
+                    <label>Layanan</label>
+                    <input type="text" name="layanan" id="edit_layanan" required>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal</label>
+                    <input type="date" name="tanggal" id="edit_tanggal" required>
+                </div>
+                <div class="form-group">
+                    <label>Jam</label>
+                    <input type="time" name="jam" id="edit_jam" required>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select name="status" id="edit_status">
+                        <option value="Pending">Pending</option>
+                        <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                        <option value="Lunas / Paid">Lunas / Paid</option>
+                        <option value="Dibatalkan">Dibatalkan</option>
+                    </select>
+                </div>
+                <button type="submit" name="update_booking" class="btn" style="background:var(--pink); color:white; width:100%">Simpan</button>
+                <button type="button" onclick="closeModal()" class="btn" style="background:#eee; width:100%; margin-top:10px;">Batal</button>
+            </form>
+        </div>
     </div>
 
+    <script>
+        function openEditModal(data) {
+            document.getElementById("edit_id").value = data.id_booking;
+            document.getElementById("edit_layanan").value = data.layanan;
+            document.getElementById("edit_tanggal").value = data.tanggal;
+            document.getElementById("edit_jam").value = data.jam;
+            document.getElementById("edit_status").value = data.status || "Pending";
+            document.getElementById("editModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+    </script>
+
+    <div class="footer">
+        &copy; 2025 Zara Eyelash – Admin Panel
+    </div>
 </body>
 
 </html>

@@ -47,6 +47,12 @@ switch ($page) {
         }
         break;
 
+    case 'riwayat':
+        $controller = new BookingController();
+        // Memanggil method riwayat() yang sudah kita buat di BookingController
+        $controller->riwayat();
+        break;
+
 
     default:
         echo "Halaman tidak ditemukan";

@@ -124,6 +124,9 @@
           <li class="nav-item">
             <a class="nav-link" href="index.php?page=admin"><i class="bi bi-person-fill-lock me-1"></i> Admin</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php?page=riwayat"><i class="bi bi-clock-history me-1"></i> Riwayat Booking</a>
+          </li>
         </ul>
       </div>
     </div>
